@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#networks=(6et1 tata sinet columbus geant5 bandcon bics integra rnp sanet dfn surfnet colt evolink)
+#networks=(att colt evolink)
+
+for n in {1..32}; do
+    python parse_gedevo_results.py ${n}
+done
