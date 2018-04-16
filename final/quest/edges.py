@@ -1,0 +1,12 @@
+f = open('new_paths.txt' ,'r')
+edges = set()
+for l in f:
+    l = l.strip().split(' ')
+    for j in range(len(l) - 1):
+        
+        e = [l[j], l[j+1]]
+        e.sort()
+        e = (e[0], e[1])
+        edges.add(e)
+
+print(len(edges))

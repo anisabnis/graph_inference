@@ -1,0 +1,7 @@
+a : paths170906-0.txt 0
+b : paths170906-0.txt 0
+c : paths170906-50.txt 1
+d : paths170906-10.txt 0 
+e : paths171205-103.txt run3
+f : paths170906-57.txt
+

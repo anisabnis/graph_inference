@@ -1,0 +1,190 @@
+import sys
+import networkx as nx
+from collections import defaultdict
+
+from operator import itemgetter
+topology = sys.argv[1]
+
+G = nx.read_gml(topology + '/topology.gml')
+i = 0
+k = 0
+
+servers = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']
+G = nx.convert_node_labels_to_integers(G, first_label=0, ordering='default')
+
+routers = G.nodes()
+print(len(routers))
+
+
+for r in routers:
+    i += 1
+    if i%6 == 0:
+        G.add_edge(servers[k], r)
+        k += 1
+        
+
+
+# Find all shortest paths between enclaves
+paths = []
+rev_paths = []
+for i in range(k):
+    for j in [r for r in range(k) if r!= i]:
+        s = servers[i]
+        t = servers[j]
+
+        s_path = nx.dijkstra_path(G, s, t)
+        paths.append(s_path)
+
+        r_path = s_path
+        r_path.reverse()
+        rev_paths.append(r_path)
+
+# Find the indigree and outdegree of all the routers
+indegree = defaultdict(lambda:defaultdict(lambda:0))
+outdegree = defaultdict(lambda:defaultdict(lambda:0))
+
+for p in paths:
+    for i, r in enumerate(p[1:len(p)-1]):
+        if i == 1:
+            indegree[r][p[i]] = indegree[r][p[i]] + 1 + 1 + 1
+
+        if i == len(p) - 1:
+            outdegree[r][p[i+2]] = outdegree[r][p[i+2]] + 1 + 1 + 1
+        
+        indegree[r][p[i]] = indegree[r][p[i]] + 1
+        outdegree[r][p[i+2]] = outdegree[r][p[i+2]] + 1
+
+two_degree_routers = [r for r in indegree if len(indegree[r]) <= 2 and len(outdegree[r]) <= 2]
+print("2d routers", two_degree_routers)
+# Remove such routers from the paths
+new_paths = []
+for p in paths:
+    np = [i for i in p if i not in two_degree_routers]
+    new_paths.append(np)
+
+
+# Find the indigree and outdegree of all the routers
+indegree = defaultdict(lambda:defaultdict(lambda:0))
+outdegree = defaultdict(lambda:defaultdict(lambda:0))
+
+for p in rev_paths:
+    for i, r in enumerate(p[1:len(p)-1]):
+        if i == 1:
+            indegree[r][p[i]] = indegree[r][p[i]] + 1
+
+        indegree[r][p[i]] = indegree[r][p[i]] + 1
+        outdegree[r][p[i+2]] = outdegree[r][p[i+2]] + 1
+
+
+new_rev_paths = []
+for p in rev_paths:
+    np = [i for i in p if i not in two_degree_routers]
+    new_rev_paths.append(np)
+
+
+paths = new_paths
+rev_paths = new_rev_paths
+
+paths = sorted(paths, key=itemgetter(0))
+rev_paths = sorted(paths, key=itemgetter(0))
+
+
+p_file = open(topology + '/orig_path.txt', 'w')
+
+for p in paths:
+    p = [str(x) for x in p]
+    p_file.write(' '.join(p))
+    p_file.write('\n')
+
+p_file.close()
+
+p_file = open(topology + '/orig_path_rev.txt', 'w')
+
+for p in rev_paths:
+    p = [str(x) for x in p]
+    p_file.write(' '.join(p))
+    p_file.write('\n')
+
+p_file.close()
+
+i = 1
+d_file = open(topology + '/distances.txt', 'w')
+for p in paths:
+    s = p[0]
+    d = p[len(p)-1]
+    dist = len(p)
+    d_file.write(s + ' ' + d + ' ' + str(dist) + ' ' + str(i))
+    d_file.write('\n')
+    i = i + 1
+d_file.close()
+
+class Tree:
+    def __init__(self, id):
+        self.id = id
+        self.children = list()
+        self.plr = list()
+
+    def leafs(self):
+        if len(self.children) == 0:
+            return [str(self.id)]
+        else:
+            return [d for c in self.children for d in c.leafs()]
+
+
+def printTree(tree):
+    if len(tree.children) == 0:
+        return
+    print(str(tree.id) + ' ' + ':'.join([str(c.id) for c in tree.children]))
+    return [printTree(c) for c in tree.children]
+
+def writeCovariance(s, tree, f, d):
+    if len(tree.children) == 0:
+        return 
+    if len(tree.children) > 1:
+        req_dsts = [c.leafs()[0] for c in tree.children]
+        for i,r1 in enumerate(req_dsts):
+            for j,r2 in enumerate(req_dsts):
+                if j > i:
+                    f.write(s + ' ' + r1 + ' ' + r2 + ' ' + str(d))
+                    f.write('\n')
+         
+    return [writeCovariance(s, c, f, d+2) for c in tree.children]
+
+trees = dict()
+for p in paths:
+    s = p[0]
+    t = p[-1]
+
+    if s not in trees:
+        trees[s] = Tree(s)
+
+    root = trees[s]
+    curr_node = root
+
+    for r in p[1:]:
+        found = False
+        if r in [c.id for c in curr_node.children]:
+            for c in curr_node.children:
+                if r == c.id:
+                    curr_node = c
+                    break
+        else:
+            new_node = Tree(r)
+            curr_node.children.append(new_node)
+            curr_node = new_node
+                
+
+f = open(topology + '/covariance.txt', 'w')
+for s in trees:
+    print("Source : ", s)
+    printTree(trees[s])
+    writeCovariance(s, trees[s], f, 0)
+f.close()
+
+f = open(topology + '/graph.txt', 'w')
+for s in trees:
+    f.write(s + ' ' + s + '1 ' + s + '2 ')
+f.close()
+
+           
+    

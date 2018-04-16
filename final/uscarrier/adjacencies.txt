@@ -1,0 +1,18 @@
+b1 f1 b d1
+e e1
+b b1
+d2 b2 a2 e1 c1
+b2 a1 c2 d2
+c c1
+d d1
+f1 b1 a2 f c1
+c1 c f2 f1 e2 d2
+a a1
+c2 b2 e1 d1 e2
+d1 a2 b1 d c2
+a1 b2 a e1
+f f1
+a2 f2 f1 d1 d2
+e2 c2 c1
+f2 a2 c1
+e1 d2 e c2 a1

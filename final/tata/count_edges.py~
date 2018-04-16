@@ -1,0 +1,21 @@
+f = open('new_edges.txt' , 'r')
+edges = set()
+for l in f:
+    l = l.strip().split()
+    e = [l[0], l[1]]
+    e.sort()
+    e = (e[0], e[1])
+    edges.add(e)
+print(len(edges))
+f.close()
+
+edges = set()
+f = open('inferred_paths.txt' , 'r')
+for l in f:
+    l = l.strip().split(' ')
+    for j in range(len(l) - 2):
+        e = [e[j], e[j+1]]
+        e.sort()
+        e = (e[0], e[1])
+        edges.add(e)
+print(len(edges))

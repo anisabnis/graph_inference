@@ -1,0 +1,70 @@
+import sys
+dir = sys.argv[1]
+
+f = open(dir + '/new.sif', 'r')
+fi = open(dir + '/new_.sif', 'w')
+
+for l in f:
+    l = l.strip().split(' ')
+    if int(l[0]) > 9:
+        l[0] = str(int(l[0]) + 10)
+
+    else :
+        l[0] = str(int(l[0]) + 1)
+        
+    if int(l[2]) > 9:
+        l[2] = str(int(l[2]) + 10)
+    else :
+        l[2] = str(int(l[2]) + 1)
+
+    fi.write(l[0] + " u " + l[2] + "\n")
+
+fi.close()
+f.close()
+
+
+f = open(dir + '/new_out.sigs', 'r')
+fi = open(dir + '/new_out_.sigs', 'w')
+
+for l in f:
+    l = l.strip().split(' ')
+    if int(l[0]) > 9:
+        l[0] = str(int(l[0]) + 10)
+    else :
+        l[0] = str(int(l[0]) + 1)
+
+    fi.write(" ".join(l))
+    fi.write("\n")
+    #fi.write(l[0] + " " + l[1] + "\n")
+
+fi.close()
+f.close()
+
+
+
+f = open(dir + '/orig.sif', 'r')
+fi = open(dir + '/orig_.sif', 'w')
+
+for l in f:
+    l = l.strip().split(' ')
+    l[0] = str(int(l[0]) + 1)
+    l[2] = str(int(l[2]) + 1)
+    fi.write(l[0] + " u " + l[2] + "\n")
+fi.close()
+f.close()
+
+
+f = open(dir + '/orig_out.sigs', 'r')
+fi = open(dir + '/orig_out_.sigs', 'w')
+
+for l in f:
+    l = l.strip().split(' ')
+    l[0] = str(int(l[0]) + 1)
+
+    fi.write(" ".join(l))
+    fi.write("\n")
+    #fi.write(l[0] + " " + l[1] + "\n")
+
+fi.close()
+f.close()
+

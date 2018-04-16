@@ -1,0 +1,10 @@
+e a d b e3 d1 0 1 0
+e a c d d1 c1 2 3 1
+c e b a c1 r 4 5 2
+c e d b r d1 6 7 3
+b c d a b1 e4 8 9 4
+b e d c e4 e2 10 11 5
+d a b e d1 r 12 13 6
+d a c b r c1 14 15 7
+a c d b a1 c1 16 17 8
+a e d c c1 d1 18 19 9

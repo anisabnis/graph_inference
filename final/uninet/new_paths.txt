@@ -1,0 +1,42 @@
+a a1 f2 g1 g
+a a1 f1 f
+a a1 f1 b1 c1 c
+a a1 f2 e1 b2 d1 d
+a a1 f1 b1 b
+a a1 f2 e1 e
+b b1 c1 d2 g1 g
+b b1 f1 f
+b b1 c1 c
+b b1 f1 b2 d1 d
+b b1 c1 d2 g1 e1 e
+b b1 f1 a1 a
+c c1 d2 g1 g
+c c1 b1 f1 f
+c c1 d2 g1 d1 d
+c c1 b1 b
+c c1 d2 g1 e1 e
+c c1 b1 f1 a1 a
+d d1 g1 g
+d d1 d2 f1 f
+d d1 g1 f2 c1 c
+d d1 d2 f1 b1 b
+d d1 g1 e1 e
+d d1 g1 f2 a1 a
+e e1 g1 g
+e e1 g1 f2 f1 f
+e e1 g1 f2 c1 c
+e e1 b2 d1 d
+e e1 g1 f2 c1 b1 b
+e e1 b2 a1 a
+f f1 b2 g1 g
+f f1 b1 c1 c
+f f1 b2 d1 d
+f f1 b1 b
+f f1 b2 f2 e1 e
+f f1 a1 a
+g g1 f2 f1 f
+g g1 f2 c1 c
+g g1 d1 d
+g g1 f2 c1 b1 b
+g g1 e1 e
+g g1 f2 a1 a

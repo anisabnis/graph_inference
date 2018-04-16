@@ -1,0 +1,28 @@
+correctness 6et1
+## Edge correctness:       77.7778%
+correctness tata
+## Edge correctness:       73.6842%
+correctness sinet
+## Edge correctness:       100%
+correctness columbus
+## Edge correctness:       68.4211%
+correctness geant5
+## Edge correctness:       66.6667%
+correctness bandcon
+## Edge correctness:       100%
+correctness bics
+## Edge correctness:       75%
+correctness integra
+## Edge correctness:       70.5882%
+correctness rnp
+## Edge correctness:       90.9091%
+correctness sanet
+## Edge correctness:       100%
+correctness dfn
+## Edge correctness:       93.75%
+correctness surfnet
+## Edge correctness:       82.3529%
+correctness colt
+## Edge correctness:       100%
+correctness evolink
+## Edge correctness:       100%

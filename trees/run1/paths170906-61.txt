@@ -1,0 +1,30 @@
+d 4 2 a 
+d 4 2 c 
+d 4 3 e 
+d 4 3 1 b 
+d 4 3 1 f 
+e 5 4 b 
+e 5 4 3 d 
+e 5 4 3 2 f 
+e 5 4 3 2 1 a 
+e 5 4 3 2 1 c 
+f 4 1 b 
+f 4 1 c 
+f 4 3 d 
+f 4 3 2 a 
+f 4 3 2 e 
+a 5 1 e 
+a 5 1 f 
+a 5 4 2 b 
+a 5 4 3 c 
+a 5 4 3 d 
+b 5 a 
+b 5 4 3 f 
+b 5 4 3 2 c 
+b 5 4 3 2 1 d 
+b 5 4 3 2 1 e 
+c 5 3 d 
+c 5 3 1 e 
+c 5 3 1 f 
+c 5 4 2 a 
+c 5 4 2 b 

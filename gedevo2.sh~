@@ -1,0 +1,15 @@
+#!/bin/bash
+
+dir=$1
+for i in {1..360}; do
+    echo $i
+    #if (( $i % 5 == 0 )); then
+	python graph_params2.py $dir $i
+	./orca.o node 5 $dir/output/$i/orig.txt $dir/output/$i/orig_out.sigs
+	./orca.o node 5 $dir/output/$i/new.txt $dir/output/$i/new_out.sigs
+	python convert.py $dir/output/$i/ $dir
+    #fi
+done
+#scp -2 $dir/output/* asabnis@ct1.h6e-t1a.edgect.isi.deterlab.net:~/gedevo/output/
+#ssh -2 asabnis@ct1.h6e-t1a.edgect.isi.deterlab.net "cd ~/gedevo; ./gedevo.sh"
+#scp -2 asabnis@ct1.h6e-t1a.edgect.isi.deterlab.net:~/gedevo/output/result $dir
