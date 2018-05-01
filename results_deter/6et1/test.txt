@@ -1,0 +1,50 @@
+True
+True
+True
+True
+True
+True
+True
+True
+True
+False ['e', 'a', 'd', 'f', 'l', '1', '9', 'c1']
+True
+True
+True
+True
+True
+False ['e', 'c', 'd', 'f', 'l', '1', '9', 'c1']
+True
+True
+True
+False ['d', 'c', 'e', 'f', 'g', '9', '1', 'c1']
+True
+True
+True
+True
+True
+True
+True
+True
+True
+False ['e', 'b', 'd', 'f', 'l', '1', '9', 'c1']
+True
+True
+False ['b', 'd', 'e', 'f', 'g', '9', '1', 'c1']
+False ['a', 'd', 'e', 'f', 'g', '9', '1', 'c1']
+True
+True
+False ['e', 'b', 'c', 'd', 'g', '9', '1', 'c1']
+False ['f', 'b', 'c', 'd', 'g', '9', '1', 'c1']
+True
+False ['d', 'b', 'e', 'f', 'g', '9', '1', 'c1']
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True

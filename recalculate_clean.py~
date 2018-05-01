@@ -90,7 +90,7 @@ class objBuilder():
                     pairs.append((c, np))
 
     def build(self):
-#        pass
+        #pass
         for d in self.d:
             src = d[0]
             dst = d[1]
@@ -191,7 +191,7 @@ class ConstraintBuilder():
         self.treeConstraints()
 
         ## Covariance trees
-        #self.covarianceTreeConstraints2()
+        #self.covarianceTreeConstraints()
 
         #self.pathCorrectness()
         self.destinationTreeConstraints()
@@ -297,7 +297,6 @@ class ConstraintBuilder():
                 if v1 <= v2:
                     continue
                 
-
                 w1_var = self.vh.getVariable('w' , 'w_' + str(v1) + '_' + str(v2), 0, 1)
                 w2_var = self.vh.getVariable('w', 'w_' + str(v2) + '_' + str(v1), 0, 1)
 
@@ -310,7 +309,7 @@ class ConstraintBuilder():
                 self.constraints[c.id] = c
 
                 self.obj.vars.append([x_var])
-                self.obj.coeffs.append(3)
+                self.obj.coeffs.append(5)
                 
 
                 self.obj.vars.append([w1_var])
@@ -638,7 +637,7 @@ class ConstraintBuilder():
         sources = self.ntrees.split(":")
 
         for src in sources:
-            #if src == "e" or src == "d":
+            #if src == "e" or src == "d" or src == "c":
             #    continue
             skip = False
             adj_list = list()
@@ -726,7 +725,7 @@ class ConstraintBuilder():
                             #self.constraints[cons.id] = cons
                         else:
                        #     if s_no == 88 or s_no == 47 or s_no == 8 or s_no == 28 or s_no == 108 or s_no == 63:
-                       #         continue
+                      #         continue
 
                             #          if s_no == 4 or s_no == 23 or s_no == 43 or s_no == 63 or s_no == 83:
                   #              continue
@@ -747,11 +746,13 @@ class ConstraintBuilder():
 
 
                             #integra
-                            if s_no == 23:
-                                continue
+                            #if s_no == 23:
+                            #    continue
                             #bics
-#                            if s_no == 83 or s_no == 23 or s_no == 46 or s_no == 3 or s_no == 66 or s_no == 107 or s_no == 108:
-#                                continue
+                            #if s_no == 83 or s_no == 84 or s_no == 86 or s_no == 45 or s_no == 26 or s_no == 7 or s_no == 3 or s_no == 65 or s_no == 64 or s_no == 107 or s_no == 108 or s_no == 105:
+                                #continue
+
+                            if s_no == 
 
                             ## colt
 #                            if s_no == 4 or s_no == 27 or s_no == 47 or s_no == 65 or s_no == 86 or s_no == 104:
@@ -760,8 +761,8 @@ class ConstraintBuilder():
                             # number of incoming is equal to number of outgoing
 
                             # integra
-                            if seg_no == 6 or seg_no == 23 or seg_no == 63 or seg_no == 66 or seg_no == 83 or seg_no == 43 or seg_no == 85:
-                                continue
+                            #if seg_no == 6 or seg_no == 23 or seg_no == 63 or seg_no == 66 or seg_no == 83 or seg_no == 43 or seg_no == 85:
+                            #    continue
 
                             if skip == False:
                                 skip = True
@@ -892,9 +893,9 @@ class ConstraintBuilder():
         f1 = open("covarianceconstraints.txt", "w")
         
         for s in trees:
-            if s == 'f':
-                printTree(trees[s])
-                continue
+#            if s == 'f':
+#                printTree(trees[s])
+#                continue
 
             tree = trees[s].children[0]
             
@@ -1019,8 +1020,8 @@ class ConstraintBuilder():
 
                     count_constraints += 1
 
-                    if count_constraints % 5 < (5 - self.ntrees):
-                        continue
+#                    if count_constraints % 5 < (5 - self.ntrees):
+#                        continue
                                                
                     if c.is_nary == False:
                         co = Constraint(-50, -1, [[p2_var], [p1_var], [e_var]], [1, -1, -50])
@@ -1055,7 +1056,7 @@ class ConstraintBuilder():
         f = open("covariances.txt", "w")
         f1 = open("covarianceconstraints.txt", "w")
 
-        fil = open(self.path + '/result.txt' , 'r')
+        fil = open(self.path + '/results.txt' , 'r')
         for line in fil:
             line = line.strip().split(" ")
             s = line[0]

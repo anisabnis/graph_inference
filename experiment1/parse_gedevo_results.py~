@@ -4,9 +4,10 @@ import numpy as np
 from edit_distance import *
 
 dir=sys.argv[1]
-f = open('gedevo/distance' + str(dir) + '.matching' , 'r')
+f = open('gedevo_files/r.' + str(dir) +  '.matching' , 'r')
 mapping = defaultdict(str)
 mapping1 = defaultdict(str)
+
 orig = 50
 inf = 50
 
@@ -55,7 +56,7 @@ for l in f:
             mapping[orig_v] = mapped_v
             mapping1[mapped_v] = orig_v
 
-f = open(dir + '/output/map.txt')
+f = open('../results_distance/' + dir + '/output/map.txt')
 orig_map = [defaultdict(), defaultdict()]
 
 i = 0
@@ -75,7 +76,7 @@ for l in f:
 f.close()      
 
 orig_paths = []
-f = open(dir + '/orig_path.txt' ,'r')
+f = open('../results_distance/' + dir + '/orig_path.txt' ,'r')
 o_paths = dict()
 enclaves = set()
 
@@ -97,7 +98,7 @@ no_paths = (len(enclaves)) * (len(enclaves) - 1)
 #    print(o)
 
 new_paths = []
-f = open(dir + '/new_paths.txt' , 'r')
+f = open('../results_distance/' + dir + '/new_paths.txt' , 'r')
 n_paths = dict()
 for l in f:
     l = l.strip().split(' ')
@@ -109,7 +110,6 @@ for l in f:
     new_paths.append(nl)
     n_paths[((s,d))] = nl
 f.close()
-
 
 x = 100
 n1_paths = dict()

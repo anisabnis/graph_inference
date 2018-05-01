@@ -1,0 +1,11 @@
+b b1
+x0 b1 d1 c1
+a1 e1 d1 a
+c1 c b1 x0
+c c1
+e1 e a1
+d d1
+b1 b x0 c1
+d1 d x0 a1
+e e1
+a a1

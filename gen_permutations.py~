@@ -6,7 +6,7 @@ def findsubsets(S,m):
 
 f = open("subset.txt", "w")
 en = ['a', 'b', 'c', 'd', 'e']
-for i in range(1,6):
+for i in range(1,7):
     sub = findsubsets(en, i)
     for s in sub:
         st = ":".join([str(x) for x in s])

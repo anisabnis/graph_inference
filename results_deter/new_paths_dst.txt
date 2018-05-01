@@ -1,0 +1,30 @@
+b b1 x0 x2 a1 a
+c c1 d1 x0 x2 a1 a
+d d1 x0 x2 a1 a
+e e1 a1 a
+f f1 b1 x0 x2 a1 a
+a a1 e1 x0 x1 b1 b
+c c1 f1 b1 b
+d d1 x1 b1 b
+e e1 x0 x1 b1 b
+f f1 b1 b
+a a1 e1 x0 d1 c1 c
+b b1 f1 c1 c
+d d1 c1 c
+e e1 x0 d1 c1 c
+f f1 c1 c
+a a1 e1 x0 d1 d
+b b1 x0 d1 d
+c c1 d1 d
+e e1 x0 d1 d
+f f1 c1 d1 d
+a a1 e1 e
+b b1 x0 x2 e1 e
+c c1 d1 x0 x2 e1 e
+d d1 x0 x2 e1 e
+f f1 b1 x0 x2 e1 e
+a a1 e1 x0 x1 b1 f1 f
+b b1 f1 f
+c c1 f1 f
+d d1 x1 b1 f1 f
+e e1 x0 x1 b1 f1 f

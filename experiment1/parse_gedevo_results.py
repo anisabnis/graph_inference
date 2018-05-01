@@ -14,6 +14,7 @@ inf = 50
 start_ = False
 start__ = False
 
+
 for l in f:
     l=l.strip()
     l.replace('\n', '')
@@ -21,6 +22,7 @@ for l in f:
     if "Edge correctness" in l:
         l = l.split(":")
         correctness=l[1]
+
 
     elif "#" in l:
         continue
@@ -55,6 +57,9 @@ for l in f:
                 continue
             mapping[orig_v] = mapped_v
             mapping1[mapped_v] = orig_v
+
+
+avg_accu = total_accu/14
 
 f = open('../results_distance/' + dir + '/output/map.txt')
 orig_map = [defaultdict(), defaultdict()]

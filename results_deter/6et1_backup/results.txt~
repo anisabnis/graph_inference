@@ -1,0 +1,24 @@
+b a e f l 1 25
+f a c d g 17 1
+d a c f g 14 1
+d a b f g 11 1
+f a b d g 11 1
+e a b d g 11 1
+b c d f l 1 25
+a c d f l 1 19
+b c e f l 1 26
+a c e f l 1 17
+c b d f l 1 11
+a b d f l 1 11
+b a d f l 1 26
+f b c d g 38 1
+f b c e g 9 1 c3 
+f a c d g 9 1 c3 
+f a d e l 1 9 c1
+f a c e g 9 1 c2
+e a c d g 9 1 c2
+e a c f g 8 1 c1
+e a b c g 9 1 c2
+e a d f g 1 9 c2
+c a d e l 1 9c3 
+d a c f g 9 1 c1

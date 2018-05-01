@@ -1,0 +1,8 @@
+import sys
+dir = sys.argv[1]
+
+
+def hasNumbers(inputString):
+    return any(char.isdigit() for char in inputString)
+
+f = open(dir + "/o_edges.txt", "r")
