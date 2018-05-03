@@ -1,0 +1,13 @@
+a a1
+d1 b1 x2 d
+c1 c x0 e1
+x2 a1 x1 d1 b1
+b b1
+c c1
+d d1
+a1 a x2 x1 x0
+x1 a1 x2 x0 e1
+e e1
+b1 b d1 x2 x0
+x0 a1 c1 x1 b1
+e1 e c1 x1

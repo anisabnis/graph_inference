@@ -1,0 +1,9 @@
+b e1
+x1 f1
+d x2
+c f1
+a1 x0
+a1 b
+b c
+c1 b1
+f a1

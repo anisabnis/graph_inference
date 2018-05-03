@@ -1,7 +1,0 @@
-f1 e
-e a
-e1 d
-x1 c1
-x1 f1
-x0 e1
-f1 b

@@ -1,0 +1,12 @@
+f x2
+e1 f1
+x0 c
+d e
+d1 b1
+f c1
+e1 b1
+e x0
+e a
+c d
+a c1
+b1 f1

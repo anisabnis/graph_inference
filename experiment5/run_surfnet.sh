@@ -4,5 +4,5 @@
 #networks=(att colt evolink)
 
 for n in {1..31}; do
-    python parse_gedevo_results.py ${n} surfnet
+    python parse_gedevo_results.py ${n} integra
 done

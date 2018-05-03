@@ -1,0 +1,42 @@
+## Group 1:                6et1o
+## Group 2:                6et1n
+## Network 1 size:         15
+## Network 1 edges:        17
+## Network 2 size:         15
+## Network 2 edges:        17
+## Aligned proteins:       15
+## Unaligned in 1:         0
+## Unaligned in 2:         0
+##
+## Edge correctness:       88.2353%
+## Iterations:             302
+## GED score:              0.117647
+## Avg. pair score:        0.0559117
+##
+## Unaligned interactions: 4
+## Partially aligned:      0
+## Fully aligned:          15
+##
+## (Lower pair score value is better)
+## FA = fully aligned
+## PA = partially aligned (undirected->directed or vice versa)
+## Add = added edge
+## Rm = removed edge
+## Flip = flipped edge direction
+## P1	P2	Pairscore	FA	PA	Add	Rm	Flip	Extra
+
+6	6	0.0101941	1	0	0	0	0	prematched
+3	3	0.0120046	1	0	0	0	0	prematched
+4	4	0.0371772	1	0	0	0	0	prematched
+1	1	0.0372916	1	0	0	0	0	prematched
+5	5	0.0372916	1	0	0	0	0	prematched
+2	2	0.0421223	1	0	0	0	0	prematched
+12	12	0.0476104	3	0	0	0	0	prematched
+9	9	0.0529371	3	0	0	0	0	prematched
+14	23	0.173151	3	0	1	0	0	-
+10	10	0.177813	3	0	0	1	0	prematched
+8	8	0.182634	3	0	1	0	0	prematched
+13	22	0.195361	3	0	1	0	0	-
+11	11	0.221635	2	0	0	1	0	prematched
+7	7	0.221635	2	0	0	1	0	prematched
+15	24	0.228494	2	0	1	1	0	-

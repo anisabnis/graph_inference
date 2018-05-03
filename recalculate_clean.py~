@@ -188,10 +188,10 @@ class ConstraintBuilder():
 
         self.buildPathConstraints()
 
-        self.treeConstraints()
+        #self.treeConstraints()
 
         ## Covariance trees
-        #self.covarianceTreeConstraints()
+        self.covarianceTreeConstraints()
 
         #self.pathCorrectness()
         self.destinationTreeConstraints()
@@ -667,7 +667,6 @@ class ConstraintBuilder():
                     for j in self.v:
                         if j == src:
                             continue
-
                         
                         inc_vars = []
                         for i in self.v:
@@ -746,13 +745,15 @@ class ConstraintBuilder():
 
 
                             #integra
-                            #if s_no == 23:
-                            #    continue
+                            if s_no == 23 or s_no == 65 or s_no == 84 or s_no == 43 or s_no == 66 or s_no == 82 or s_no == 83 or s_no == 63:
+                                continue
+
                             #bics
                             #if s_no == 83 or s_no == 84 or s_no == 86 or s_no == 45 or s_no == 26 or s_no == 7 or s_no == 3 or s_no == 65 or s_no == 64 or s_no == 107 or s_no == 108 or s_no == 105:
                                 #continue
 
-                            if s_no == 
+                            if s_no == 7:
+                                continue
 
                             ## colt
 #                            if s_no == 4 or s_no == 27 or s_no == 47 or s_no == 65 or s_no == 86 or s_no == 104:
@@ -891,7 +892,8 @@ class ConstraintBuilder():
 
         f = open("covariances.txt", "w")
         f1 = open("covarianceconstraints.txt", "w")
-        
+        #sources = self.ntrees.split(":")        
+
         for s in trees:
 #            if s == 'f':
 #                printTree(trees[s])
@@ -1020,8 +1022,8 @@ class ConstraintBuilder():
 
                     count_constraints += 1
 
-#                    if count_constraints % 5 < (5 - self.ntrees):
-#                        continue
+                    if count_constraints % 5 < (self.ntrees):
+                        continue
                                                
                     if c.is_nary == False:
                         co = Constraint(-50, -1, [[p2_var], [p1_var], [e_var]], [1, -1, -50])

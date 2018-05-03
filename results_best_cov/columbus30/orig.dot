@@ -1,0 +1,38 @@
+graph {
+	node [labelfontsize=50]
+	f1 [labelfontsize=50 pos="3,8!"]
+	b1 [labelfontsize=50 pos="9,4!"]
+	c1 [labelfontsize=50 pos="4.5,3!"]
+	5 [labelfontsize=50]
+	d [labelfontsize=50 pos="2,5!"]
+	a [labelfontsize=50 pos="8,2!"]
+	b [labelfontsize=50 pos="10,4!"]
+	a1 [labelfontsize=50 pos="8,3!"]
+	c [labelfontsize=50 pos="4.5,2!"]
+	e1 [labelfontsize=50 pos="7,7!"]
+	42 [labelfontsize=50]
+	d1 [labelfontsize=50 pos="3,5!"]
+	e [labelfontsize=50 pos="7,9!"]
+	f [labelfontsize=50 pos="3,9!"]
+	52 [labelfontsize=50]
+	27 [labelfontsize=50]
+	f -- f1
+	d1 -- f1
+	c -- c1
+	52 -- d1
+	27 -- 52
+	42 -- 5
+	d -- d1
+	27 -- e1
+	b -- b1
+	42 -- 52
+	42 -- b1
+	c1 -- f1
+	27 -- a1
+	b1 -- c1
+	5 -- e1
+	a -- a1
+	52 -- a1
+	5 -- c1
+	e -- e1
+}

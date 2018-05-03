@@ -1,9 +1,9 @@
 #!/bin/bash
 
-start=1
+start=53
 filelines=`cat subset.txt`
 
 for line in $filelines; do
-    ./script_best.sh 6et1 3 $line $start 
+    ./script_best.sh columbus 3 $line $start 
     start=$(($start + 1))
 done
