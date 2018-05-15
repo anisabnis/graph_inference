@@ -1281,15 +1281,22 @@ class ConstraintBuilder():
 
 
     def rdConstraints(self):
+        sources = self.ntrees.split(":")
         for s in self.rd:
+            if s not in sources:
+                continue
+
             distances = self.rd[s]
             distances.sort(key=lambda x: x[1])
             
+            distances = [x for x in distances if x[0] in sources]
+
             for i in range(1, len(distances)):
                 s1 = distances[i-1][0]
                 d1 = distances[i-1][1]
                 s2 = distances[i][0]
                 d2 = distances[i][1]
+                
 
                 z1_var = self.vh.getVariable('z', 'z_' + s1 + '_' + s, 2, 12)
                 z2_var = self.vh.getVariable('z', 'z_' + s2 + '_' + s, 2, 12)
@@ -1372,11 +1379,8 @@ class ConstraintBuilder():
                         eq4 = Constraint(-12, "Na", [[r_var], [z_var], [s_var]], [1,-1,-12])
                         self.constraints[eq4.id] = eq4
 
-
-
                 cons1 = Constraint(1, "Na", new_equ, new_coeffs)
                 self.constraints[cons1.id] = cons1
-
 
                 cons1 = Constraint("Na", 1, new_equ, new_coeffs)
                 self.constraints[cons1.id] = cons1

@@ -8,6 +8,7 @@ f = open(dir1 + '/orig_path.txt', 'r')
 for l in f:
    l = l.strip().split(' ')
    enclaves.add(l[0])
+   enclaves.add(l[-1])
 f.close()
 
 len_enclaves = len(list(enclaves)) * 2

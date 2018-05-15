@@ -35,7 +35,7 @@ print(accuracy_avg)
 accuracy_min = [110] * no_enc
 
 N = no_enc
-f = open(dir + '/results_columbus', 'r')
+f = open(dir + '/results_' + network, 'r')
 
 for l in f:
     l = l.strip().split(':')

@@ -16,8 +16,6 @@ for l in f:
     i += 1
 f.close()
 
-print(no_trees)
-
 font = {'size'   : 22}
 
 matplotlib.rc('font', **font)
@@ -29,8 +27,6 @@ ped = [0] * no_enc
 accuracy_avg = list()
 for i in range(no_enc):
     accuracy_avg.append([])
-
-print(accuracy_avg)
 
 accuracy_min = [110] * no_enc
 
@@ -54,15 +50,21 @@ accu_avg = []
 
 for i in range(no_enc):
     s = sum([x for x in accuracy_avg[i]])
-    accu_avg.append(s/len(accuracy_avg[i]))
+    if len(accuracy_avg[i]) == 0:
+        accu_avg.append(accu_avg[i-1])
+    else :
+        accu_avg.append(s/len(accuracy_avg[i]))
 
 
-# for i in range(1, no_enc):
-#     if accuracy[i] < accuracy[i-1]:
-#         accuracy[i] = accuracy[i-1]
+for i in range(1, no_enc):
+    if accuracy[i] < accuracy[i-1]:
+        accuracy[i] = accuracy[i-1]
+        
+    if accu_avg[i] < accu_avg[i-1]:
+        accu_avg[i] = accu_avg[i-1]
 
-#    if accu_avg[i] < accu_avg[i-1]:
-#        accu_avg[i] = accu_avg[i-1]
+    if accuracy_min[i] < accuracy_min[i-1]:
+        accuracy_min[i] = accuracy_min[i-1]
 
 #accu_avg = []
 #for i in range(6):

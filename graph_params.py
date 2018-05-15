@@ -10,6 +10,7 @@ f = open(dir + '/orig_path.txt', 'r')
 for l in f:
    l = l.strip().split(' ')
    enclaves.add(l[0])
+   enclaves.add(l[-1])   
 
 new_routers = len(enclaves) * 2
 rr = new_routers
@@ -31,6 +32,7 @@ for l in f:
    s = l[0]
    d = l[-1]
    router_id = 0
+
    for r in l:
       if r == s or r == d:
          i = enclaves.index(r)
@@ -42,8 +44,10 @@ for l in f:
             e_id = s
          else :
             e_id = d
+
          e_index = enclaves.index(e_id)
          e_index += len(enclaves)
+
          if r not in add_routers:
             add_routers[r] = str(e_index)
 
@@ -107,24 +111,30 @@ new_routers = rr
 add_routers = {}
 new_paths = []
 
+print("heree ", enclaves)
 
 for l in f:
    l = l.strip().split(' ')
    s = l[0]
    d = l[-1]
    router_id = 0
+
+   print(l)
+
    for r in l:
       if r == s or r == d:
          i = enclaves.index(r)
          if r not in add_routers:
             add_routers[r] = str(i)
 
-      elif router_id == 1 or router_id == len(l) - 1:
+      elif router_id == 1 or router_id == len(l) - 2:
 
+         print("do i even come here ")
          if router_id == 1:
             e_id = s
          else :
             e_id = d
+
          e_index = enclaves.index(e_id)
          e_index += len(enclaves)
 
@@ -145,6 +155,10 @@ for l in f:
          new_routers += 1
 f.close()
 
+print("add_routers ", add_routers)
+print(len(add_routers))
+
+
 f = open(dir + '/new_paths.txt', 'r')
 for l in f:
    l = l.strip().split(' ')
@@ -153,8 +167,6 @@ for l in f:
       np.append(add_routers[r])
    new_paths.append(np)
 
-print(add_routers)
-print(len(add_routers))
 
 map.write(str(add_routers))
 map.write("\n")

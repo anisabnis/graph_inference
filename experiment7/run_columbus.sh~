@@ -4,5 +4,5 @@
 #networks=(att colt evolink)
 
 for n in {1..63}; do
-    python parse_gedevo_results.py ${n}
+    python parse_gedevo_results.py ${n} tata
 done

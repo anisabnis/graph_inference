@@ -7,6 +7,7 @@ dir=sys.argv[1]
 type=sys.argv[2]
 
 f = open('gedevo_files_' + type + '/r.' + str(dir) +  '.matching' , 'r')
+
 mapping = defaultdict(str)
 mapping1 = defaultdict(str)
 

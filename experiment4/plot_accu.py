@@ -57,12 +57,15 @@ for i in range(no_enc):
     accu_avg.append(s/len(accuracy_avg[i]))
 
 
-# for i in range(1, no_enc):
-#     if accuracy[i] < accuracy[i-1]:
-#         accuracy[i] = accuracy[i-1]
+for i in range(1, no_enc):
+    if accuracy[i] < accuracy[i-1]:
+        accuracy[i] = accuracy[i-1]
 
-#    if accu_avg[i] < accu_avg[i-1]:
-#        accu_avg[i] = accu_avg[i-1]
+    if accu_avg[i] < accu_avg[i-1]:
+        accu_avg[i] = accu_avg[i-1]
+
+    if accuracy_min[i] < accuracy_min[i-1]:
+        accuracy_min[i] = accuracy_min[i-1]
 
 #accu_avg = []
 #for i in range(6):

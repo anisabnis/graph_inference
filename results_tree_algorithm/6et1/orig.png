@@ -1,0 +1,246 @@
+digraph {
+	a [label="40,10!"]
+	a -> a1
+	a1 [label="40,15!"]
+	a1 -> c1
+	c1 [label="30,15!"]
+	c1 -> d1
+	d1 [label="25,30!"]
+	d1 -> d
+	a [label="40,10!"]
+	a -> a1
+	a1 [label="40,15!"]
+	a1 -> c1
+	c1 [label="30,15!"]
+	c1 -> d1
+	d1 [label="25,30!"]
+	d1 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> f1
+	f1 -> f
+	a [label="40,10!"]
+	a -> a1
+	a1 [label="40,15!"]
+	a1 -> b1
+	b1 [label="45,20!"]
+	b1 -> b
+	a [label="40,10!"]
+	a -> a1
+	a1 [label="40,15!"]
+	a1 -> c1
+	c1 [label="30,15!"]
+	c1 -> c
+	a [label="40,10!"]
+	a -> a1
+	a1 [label="40,15!"]
+	a1 -> c1
+	c1 [label="30,15!"]
+	c1 -> d1
+	d1 [label="25,30!"]
+	d1 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> e
+	b [label="50,20!"]
+	b -> b1
+	b1 [label="45,20!"]
+	b1 -> e4
+	e4 -> c1
+	c1 [label="30,15!"]
+	c1 -> c
+	b [label="50,20!"]
+	b -> b1
+	b1 [label="45,20!"]
+	b1 -> a1
+	a1 [label="40,15!"]
+	a1 -> a
+	b [label="50,20!"]
+	b -> b1
+	b1 [label="45,20!"]
+	b1 -> e4
+	e4 -> e2
+	e2 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> e
+	b [label="50,20!"]
+	b -> b1
+	b1 [label="45,20!"]
+	b1 -> e4
+	e4 -> e2
+	e2 -> d1
+	d1 [label="25,30!"]
+	d1 -> d
+	b [label="50,20!"]
+	b -> b1
+	b1 [label="45,20!"]
+	b1 -> e4
+	e4 -> e2
+	e2 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> f1
+	f1 -> f
+	c [label="20,10!"]
+	c -> c1
+	c1 [label="30,15!"]
+	c1 -> d1
+	d1 [label="25,30!"]
+	d1 -> d
+	c [label="20,10!"]
+	c -> c1
+	c1 [label="30,15!"]
+	c1 -> d1
+	d1 [label="25,30!"]
+	d1 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> e
+	c [label="20,10!"]
+	c -> c1
+	c1 [label="30,15!"]
+	c1 -> a1
+	a1 [label="40,15!"]
+	a1 -> a
+	c [label="20,10!"]
+	c -> c1
+	c1 [label="30,15!"]
+	c1 -> e4
+	e4 -> b1
+	b1 [label="45,20!"]
+	b1 -> b
+	c [label="20,10!"]
+	c -> c1
+	c1 [label="30,15!"]
+	c1 -> d1
+	d1 [label="25,30!"]
+	d1 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> f1
+	f1 -> f
+	d [label="20,30!"]
+	d -> d1
+	d1 [label="25,30!"]
+	d1 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> f1
+	f1 -> f
+	d [label="20,30!"]
+	d -> d1
+	d1 [label="25,30!"]
+	d1 -> e2
+	e2 -> e4
+	e4 -> b1
+	b1 [label="45,20!"]
+	b1 -> b
+	d [label="20,30!"]
+	d -> d1
+	d1 [label="25,30!"]
+	d1 -> c1
+	c1 [label="30,15!"]
+	c1 -> a1
+	a1 [label="40,15!"]
+	a1 -> a
+	d [label="20,30!"]
+	d -> d1
+	d1 [label="25,30!"]
+	d1 -> e3
+	e3 -> e1
+	e1 [label="25,45!"]
+	e1 -> e
+	d [label="20,30!"]
+	d -> d1
+	d1 [label="25,30!"]
+	d1 -> c1
+	c1 [label="30,15!"]
+	c1 -> c
+	e [label="30,50!"]
+	e -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> d1
+	d1 [label="25,30!"]
+	d1 -> d
+	e [label="30,50!"]
+	e -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> e2
+	e2 -> e4
+	e4 -> b1
+	b1 [label="45,20!"]
+	b1 -> b
+	e [label="30,50!"]
+	e -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> d1
+	d1 [label="25,30!"]
+	d1 -> c1
+	c1 [label="30,15!"]
+	c1 -> a1
+	a1 [label="40,15!"]
+	a1 -> a
+	e [label="30,50!"]
+	e -> e1
+	e1 [label="25,45!"]
+	e1 -> f1
+	f1 -> f
+	e [label="30,50!"]
+	e -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> d1
+	d1 [label="25,30!"]
+	d1 -> c1
+	c1 [label="30,15!"]
+	c1 -> c
+	f [label="15,45!"]
+	f -> f1
+	f1 -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> e2
+	e2 -> e4
+	e4 -> b1
+	b1 [label="45,20!"]
+	b1 -> b
+	f [label="15,45!"]
+	f -> f1
+	f1 -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> d1
+	d1 [label="25,30!"]
+	d1 -> d
+	f [label="15,45!"]
+	f -> f1
+	f1 -> e1
+	e1 [label="25,45!"]
+	e1 -> e
+	f [label="15,45!"]
+	f -> f1
+	f1 -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> d1
+	d1 [label="25,30!"]
+	d1 -> c1
+	c1 [label="30,15!"]
+	c1 -> c
+	f [label="15,45!"]
+	f -> f1
+	f1 -> e1
+	e1 [label="25,45!"]
+	e1 -> e3
+	e3 -> d1
+	d1 [label="25,30!"]
+	d1 -> c1
+	c1 [label="30,15!"]
+	c1 -> a1
+	a1 [label="40,15!"]
+	a1 -> a
+}

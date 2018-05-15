@@ -1,0 +1,10 @@
+f d c e l
+f d a e l
+f c a b g
+f d e b e
+f d c a l
+f c e b g
+f d a b e
+f d c b e
+f c a e l
+f a e b g

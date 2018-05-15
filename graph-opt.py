@@ -1,5 +1,5 @@
 import sys
-from recalculate_clean import *
+from recalculate_tree import *
 from VariableHolder import *
 from gamsWriter import *
 from collections import defaultdict
@@ -13,7 +13,8 @@ if __name__ == "__main__":
     no_routers = int(sys.argv[2])
     merge_no = ""#sys.argv[2]
     no_trees = sys.argv[3]
-
+    srrc = sys.argv[4]
+    
     c = dict() 
 
 #     f = open('../' + dir + '/' + str(merge_no) + '/covariance.txt', 'r')
@@ -82,8 +83,8 @@ if __name__ == "__main__":
     f.close()
 
     vh = VariableHolder()
-    objective_fun = objBuilder(vertices, vh, distances, c, dir)
-    constraints = ConstraintBuilder(vertices, enclaves, c, distances, vh, dir, objective_fun, rd, no_trees)
+    objective_fun = objBuilder(vertices, vh, distances, c, dir, srrc)
+    constraints = ConstraintBuilder(vertices, enclaves, c, distances, vh, dir, objective_fun, rd, no_trees, srrc)
 
     g_writer = gamsWriter(vh, objective_fun, constraints, 'tree.gams')
     g_writer.writeOPT()

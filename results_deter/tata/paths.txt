@@ -1,0 +1,31 @@
+a ra rb rc b
+a ra rb rc f
+a ra rb rd c
+a ra e
+a ra rd d
+b ra rb rd a
+b ra rb rd e
+b ra rb d
+b ra rc c
+b ra rc f
+c ra rb rd a
+c ra rb rd e
+c ra rb d
+c ra rc b
+c ra rc f
+d ra rb a
+d ra rb e
+d ra b
+d ra rc c
+d ra rc f
+e ra a
+e ra rb rc f
+e ra rb rc b
+e ra rb rd c
+e ra rb rd d
+f ra b
+f ra rb c
+f ra rb rc d
+f ra rb rc rd a
+f ra rb rc rd e
+

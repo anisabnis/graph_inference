@@ -58,7 +58,7 @@ for l in f:
             mapping[orig_v] = mapped_v
             mapping1[mapped_v] = orig_v
 
-f = open('../results_distance/' + dir + '/output/map.txt')
+f = open('../results_best/' + type + dir + '/output/map.txt')
 orig_map = [defaultdict(), defaultdict()]
 
 i = 0
@@ -78,7 +78,7 @@ for l in f:
 f.close()      
 
 orig_paths = []
-f = open('../results_distance/' + dir + '/orig_path.txt' ,'r')
+f = open('../results_best/' + type + dir + '/orig_path.txt' ,'r')
 o_paths = dict()
 enclaves = set()
 
@@ -100,7 +100,7 @@ no_paths = (len(enclaves)) * (len(enclaves) - 1)
 #    print(o)
 
 new_paths = []
-f = open('../results_distance/' + dir + '/new_paths.txt' , 'r')
+f = open('../results_best/' + type + dir + '/new_paths.txt' ,'r')
 n_paths = dict()
 for l in f:
     l = l.strip().split(' ')

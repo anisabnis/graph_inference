@@ -1,0 +1,15 @@
+b1 b f1 c1
+f1 b1 f
+c c1
+d d1
+f f1
+e1 x0 e
+c1 b1 d1 c
+a1 a x1
+a a1
+x0 e1 x2
+x1 a1 d1
+e e1
+b b1
+d1 x2 c1 d x1
+x2 d1 x0

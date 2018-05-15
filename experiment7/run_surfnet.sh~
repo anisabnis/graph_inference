@@ -3,6 +3,6 @@
 #networks=(6et1 tata sinet columbus geant5 bandcon bics integra rnp sanet dfn surfnet colt evolink)
 #networks=(att colt evolink)
 
-for n in {1..31}; do
-    python parse_gedevo_results.py ${n} integra
+for n in {1..63}; do
+    python parse_gedevo_results.py ${n} tata
 done

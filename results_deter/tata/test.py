@@ -1,0 +1,36 @@
+f = open('paths.txt' , 'r')
+from collections import defaultdict
+
+orig_paths = defaultdict()
+for l in f:
+    l = l.strip().split(' ')
+    s = l[0]
+    d = l[-1]
+    orig_paths[((s,d))] = l
+f.close()
+
+f = open('results.txt' , 'r')
+for l in f:
+    l = l.strip().split(' ')
+    s = l[0]
+    ucv1 = l[1]
+    cv = l[2]
+    ucv2 = l[3]
+
+    sign = l[4]
+
+    p1 = orig_paths[((s, ucv1))]
+    p2 = orig_paths[((s, cv))]
+    p3 = orig_paths[((s, ucv2))]
+
+    s1 = [x for x in p1 if x in p2]
+    s2 = [x for x in p2 if x in p3]
+    
+    if len(s1) > len(s2) and sign == "g":
+        print("True")
+    elif len(s1) < len(s2) and sign == "l":
+        print("True")
+    elif len(s1) == len(s2):
+        print("True")
+    else :
+        print("False", l)
