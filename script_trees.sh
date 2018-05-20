@@ -14,9 +14,9 @@ python graph-opt.py results_deter/$dir $enc 6
 gams tree.gams
 
 scp -2 tree.mps asabnis@users.deterlab.net:/users/asabnis/cplex/bin/x86-64_linux/
-ssh -2 asabnis@ct1.h6e-t1a.edgect.isi.deterlab.net "rm ~/cplex/bin/x86-64_linux/solution.xml"
-ssh -2 asabnis@ct1.h6e-t1a.edgect.isi.deterlab.net "cd ~/cplex/bin/x86-64_linux/; ./cplex -f ./command.txt; cd ../../..;" 
-scp -2 asabnis@ct1.h6e-t1a.edgect.isi.deterlab.net:~/cplex/bin/x86-64_linux/solution.xml results_deter/$dir/res$enc.xml
+ssh -2 asabnis@ct1.tata.edgect.isi.deterlab.net "rm ~/cplex/bin/x86-64_linux/solution.xml"
+ssh -2 asabnis@ct1.tata.edgect.isi.deterlab.net "cd ~/cplex/bin/x86-64_linux/; ./cplex -f ./command.txt; cd ../../..;" 
+scp -2 asabnis@ct1.tata.edgect.isi.deterlab.net:~/cplex/bin/x86-64_linux/solution.xml results_deter/$dir/res$enc.xml
 
 python parsetrees.py results_deter/$dir $enc
 python parse_solution.py results_deter/$dir 

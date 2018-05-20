@@ -9,7 +9,7 @@ enc=$2
 #cp results/$dir/distances.txt results_trees/$dir/
 #cp results/$dir/orig_path.txt results_trees/$dir/
 
-python graph-opt.py results_deter/$dir $enc
+python graph-opt.py results_deter/$dir $enc 6
 
 gams tree.gams
 

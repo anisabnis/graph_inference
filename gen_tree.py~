@@ -1,8 +1,10 @@
 import os
 import sys
 import itertools
+import random
 
 network = sys.argv[1]
+i = int(sys.argv[2])
 
 print("Network : ", network)
 
@@ -12,10 +14,11 @@ paths = dict()
 def findsubsets(S,m):
     return set(itertools.combinations(S, m))
 
-def findAllPermuations(S, m):
+def findAllPermutations(S, m):
     return set(itertools.combinations(S, m))
 
-f = open("results_tree_algorithm/" +  network + "/orig_path.txt", "r")
+f = open("results_random_err/" +  network + "/" + str(i) + "/orig_path.txt", "r")
+
 for l in f:
     l = l.strip().split(" ")
     s=l[0]
@@ -24,21 +27,14 @@ for l in f:
     paths[((s,d))] = l
 f.close()
 
+
+f = open("results_random_err" +"/" + network + "/" + str(i) + "/correlations.txt", "w")
+
+#for i in [1,2,3,4,5]:
 for s in sources:
-    os.system("mkdir " + "results_tree_algorithm" + "/" + network + "/" + s)
-    
-    f = open("results_tree_algorithm" +"/" + network + "/" + s + "/orig_path.txt", "w")
-    for s2 in sources:
-        if s == s2:
-            continue
-        f.write(" ".join(paths[((s, s2))]) + "\n")
-
-    f.close()
-    
     req_dsts = [d for d in sources if d != s]
-    req_dsts_subsets = findAllPermutations(req_dsts, 3)
+    req_dsts_subsets = findsubsets(req_dsts, 3)
 
-    f = open("results_tree_algorithm" +"/" + network + "/" + s + "/correlations.txt", "w")
 
     for sub in req_dsts_subsets:
         ucv1 = sub[0]
@@ -48,17 +44,34 @@ for s in sources:
         p1 = paths[((s, ucv1))]
         p2 = paths[((s, cv))]
         p3 = paths[((s, ucv2))]
-
-        l1 = len(list(set(p1).intersection(p2)))
-        l2 = len(list(set(p2).intersection(p3)))
         
-        if l1 > l2:
-            f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " g\n")
-        elif l2 > l1:
-            f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " l\n")
-        else:
-            f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " e\n")
+        l1 = len(list(set(p1).intersection(p2)))
+        l2 = len(list(set(p2).intersection(p3)))        
+        # generate random 
+        
+        if random.randint(1,10) < i:
+            make_err = True
+        else :
+            make_err = False
 
+        if l1 > l2:
+            if make_err == False:
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " g\n")
+            else:
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " l\n")
+
+        elif l2 > l1:
+            if make_err == False:
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " l\n")
+            else :
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " g\n")
+        else:
+            decide = random.randint(1,2)
+            if decide == 1:
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " l\n")
+            else:
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " g\n")
+                
             
 
 

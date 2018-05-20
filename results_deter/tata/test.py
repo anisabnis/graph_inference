@@ -9,7 +9,7 @@ for l in f:
     orig_paths[((s,d))] = l
 f.close()
 
-f = open('results.txt' , 'r')
+f = open('results.txt.important' , 'r')
 for l in f:
     l = l.strip().split(' ')
     s = l[0]

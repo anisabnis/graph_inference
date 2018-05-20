@@ -83,7 +83,7 @@ if __name__ == "__main__":
     f.close()
 
     vh = VariableHolder()
-    objective_fun = objBuilder(vertices, vh, distances, c, dir)
+    objective_fun = objBuilder(vertices, vh, distances, c, dir, srrc)
     constraints = ConstraintBuilder(vertices, enclaves, c, distances, vh, dir, objective_fun, rd, no_trees, srrc)
 
     g_writer = gamsWriter(vh, objective_fun, constraints, 'tree.gams')

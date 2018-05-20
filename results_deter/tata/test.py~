@@ -1,4 +1,4 @@
-f = open('orig_path.txt' , 'r')
+f = open('paths.txt' , 'r')
 from collections import defaultdict
 
 orig_paths = defaultdict()

@@ -191,7 +191,7 @@ class ConstraintBuilder():
         #self.treeConstraints()
 
         ## Covariance trees
-        self.covarianceTreeConstraints()
+        self.covarianceTreeConstraints2()
 
         #self.pathCorrectness()
         self.destinationTreeConstraints()
@@ -1058,7 +1058,7 @@ class ConstraintBuilder():
         f = open("covariances.txt", "w")
         f1 = open("covarianceconstraints.txt", "w")
 
-        fil = open(self.path + '/results.txt' , 'r')
+        fil = open(self.path + '/correlations.txt' , 'r')
         for line in fil:
             line = line.strip().split(" ")
             s = line[0]
@@ -1281,15 +1281,12 @@ class ConstraintBuilder():
 
 
     def rdConstraints(self):
-        sources = self.ntrees.split(":")
         for s in self.rd:
-            if s not in sources:
-                continue
 
             distances = self.rd[s]
             distances.sort(key=lambda x: x[1])
             
-            distances = [x for x in distances if x[0] in sources]
+            #distances = [x for x in distances if x[0] in sources]
 
             for i in range(1, len(distances)):
                 s1 = distances[i-1][0]
