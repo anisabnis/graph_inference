@@ -1,4 +1,4 @@
-f = open('paths.txt' , 'r')
+f = open('tata_paths.txt' , 'r')
 from collections import defaultdict
 
 orig_paths = defaultdict()
@@ -9,7 +9,7 @@ for l in f:
     orig_paths[((s,d))] = l
 f.close()
 
-f = open('results.txt.important' , 'r')
+f = open('results.txt' , 'r')
 for l in f:
     l = l.strip().split(' ')
     s = l[0]

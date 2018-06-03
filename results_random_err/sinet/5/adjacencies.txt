@@ -1,0 +1,13 @@
+c c1
+d d1
+x0 f1 b1 e1 d1 a1
+b b1
+c1 f1 c b1 d1
+f1 f x0 d1 c1
+b1 x0 c1 e1 b
+a1 x0 d1 a
+d1 d x0 e1 f1 c1 a1
+f f1
+e e1
+a a1
+e1 x0 b1 d1 e

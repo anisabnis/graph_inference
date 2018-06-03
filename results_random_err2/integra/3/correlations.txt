@@ -1,0 +1,9 @@
+d e a b g
+d e c b g
+e d a b l
+c e a b g
+c d e a g
+a e c b g
+a d e c l
+b d e c g
+b e c a g

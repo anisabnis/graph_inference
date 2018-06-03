@@ -1,9 +1,15 @@
 #!/bin/bash
 
-networks=(columbus tata surfnet integra)
+networks=(bandcon att sanet sinet)
+intnodes=(1 3 1 1)
 
-for n in ${networks[@]}; do
-    for i in {3..5}; do
-	./script_random.sh ${n} 3 $i
+for j in {0..3}; do
+    #python gen_rd_init.py ${networks[${j}]}
+    for i in {5..5}; do
+	./script_random_init.sh ${networks[${j}]} ${intnodes[${j}]} ${i}
+    done
+    python gen_tree_exp3.py ${networks[${j}]} 5
+    for i in {5..5}; do
+	./script_random.sh ${networks[${j}]} ${intnodes[${j}]} ${i}
     done
 done

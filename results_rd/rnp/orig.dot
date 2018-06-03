@@ -1,0 +1,22 @@
+graph {
+	node [labelfontsize=50]
+	a1 [labelfontsize=50 pos="8,3!"]
+	c1 [labelfontsize=50 pos="4.5,3!"]
+	c [labelfontsize=50 pos="4.5,2!"]
+	d [labelfontsize=50 pos="2,5!"]
+	d1 [labelfontsize=50 pos="3,5!"]
+	b [labelfontsize=50 pos="10,4!"]
+	3 [labelfontsize=50]
+	b1 [labelfontsize=50 pos="9,4!"]
+	a [labelfontsize=50 pos="8,2!"]
+	c -- c1
+	3 -- c1
+	b1 -- c1
+	d -- d1
+	b -- b1
+	3 -- a1
+	a1 -- b1
+	a -- a1
+	b1 -- d1
+	3 -- d1
+}

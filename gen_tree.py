@@ -17,7 +17,10 @@ def findsubsets(S,m):
 def findAllPermutations(S, m):
     return set(itertools.combinations(S, m))
 
-f = open("results_random_err/" +  network + "/" + str(i) + "/orig_path.txt", "r")
+if i != 0:
+    f = open("results_psm" +"/" + network + "/" + str(i) + "/orig_path.txt", "r")
+else : 
+    f = open("results_psm" +"/" + network +  "/orig_path.txt", "r")
 
 for l in f:
     l = l.strip().split(" ")
@@ -27,13 +30,15 @@ for l in f:
     paths[((s,d))] = l
 f.close()
 
-
-f = open("results_random_err" +"/" + network + "/" + str(i) + "/correlations.txt", "w")
+if i != 0:
+    f = open("results_psm" +"/" + network + "/" + str(i) + "/correlations.txt", "w")
+else :
+    f = open("results_psm" +"/" + network + "/correlations.txt", "w")
 
 #for i in [1,2,3,4,5]:
 for s in sources:
     req_dsts = [d for d in sources if d != s]
-    req_dsts_subsets = findsubsets(req_dsts, 3)
+    req_dsts_subsets = findAllPermutations(req_dsts, 3)
 
 
     for sub in req_dsts_subsets:
@@ -68,11 +73,10 @@ for s in sources:
         else:
             decide = random.randint(1,2)
             if decide == 1:
-                #f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " l\n")
-                pass
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " e\n")
             else:
-                #f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " g\n")
-                pass
+                f.write(s + " " + ucv1 + " " + cv + " " + ucv2 + " e\n")
+            
                 
             
 

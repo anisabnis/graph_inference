@@ -14,25 +14,4 @@ def edit_distance(s1, s2):
 
     return tbl[i,j]
 
-dir = sys.argv[1]
-
-o_path = dict()
-f = open(dir + '/orig_path.txt', 'r')
-for l in f:
-    l = l.strip().split(' ')
-    s = l[0]
-    d = l[1]
-    o_path[((s,d))]
-f.close()
-
-f = open(dir + '/new_paths.txt' , 'r')
-n_path = dict()
-for l in f:
-    l = l.strip().split(' ')
-    s = l[0]
-    d = l[1]
-    n_path[((s,d))]
-f.close()
-
-
 #print(edit_distance("Helloworld", "HalloWorld"))

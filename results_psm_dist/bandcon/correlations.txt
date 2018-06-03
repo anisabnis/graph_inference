@@ -1,0 +1,13 @@
+d b a c l
+d b e c l
+d b e a l
+b e a c g
+b d e a l
+e b a c l
+e d a c l
+a b e c g
+a d b e l
+c b e a l
+c d e a l
+c d b a g
+c d b e g

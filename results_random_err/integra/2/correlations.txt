@@ -1,7 +1,20 @@
-d e c b l
-d c b a g
-c e d b l
-c d b a g
-b e c a g
-a e d b l
-a e c b g
+c b e a l t
+c d b a g t
+a b c e l t
+e d c a g f
+e d b c l f
+d b c a g t
+a d c e l t
+c d e a g f
+b c e a g t
+b d e a e t
+a d b c g t
+d b e a l t
+b d c e l t
+d c e a l t
+a d b e g t
+e b c a e t
+b d c a e t
+d b c e g t
+e d b a e t
+c d b e g t

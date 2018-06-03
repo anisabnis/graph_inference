@@ -1,0 +1,7 @@
+#!/bin/bash
+
+networks=(6et1 tata sinet columbus bandcon bics rnp sanet dfn surfnet colt evolink)
+
+for i in {0..12}; do
+    ./script_psm.sh ${networks[${i}]} 1;
+done

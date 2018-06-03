@@ -1,15 +1,20 @@
-e a c d g
-e b a d g
-e b c d g
-b e a c g
-b e a d l
-a e c d g
-a e b d g
-a b c d g
-c e b a l
-c e b d g
-c e a d l
-c b a d g
-d e b a g
-d e a c l
-d e b c l
+a b e d l f
+c b e d l f
+b a e d l f
+c b a e l f
+e a d c g f
+d a e c g f
+b e d c l f
+a e d c l f
+a b d c l f
+d b a c l f
+e b d c g f
+c b a d g f
+e b a c g f
+b a e c l f
+b a d c l f
+e b a d g t
+a b e c g f
+c a e d g f
+d b e c l f
+d b a e l f

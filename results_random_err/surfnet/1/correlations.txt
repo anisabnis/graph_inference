@@ -1,12 +1,20 @@
-e d c a l
-b e d a l
-b e d c g
-d b c a g
-d e b a l
-d e b c l
-d e c a l
-c e d a l
-c e b a l
-c b d a l
-c e b d l
-a e b d g
+a b e d g t
+c b e d e t
+b a e d e t
+c b a e g t
+e a d c e t
+d a e c e t
+b e d c l f
+a e d c e t
+a b d c e t
+d b a c l f
+e b d c e t
+c b a d l t
+e b a c e t
+b a e c l f
+b a d c g t
+e b a d g t
+a b e c e t
+c a e d e t
+d b e c e t
+d b a e g t

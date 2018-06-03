@@ -1,0 +1,60 @@
+b c a f g f
+d c b f g f
+e c a d l f
+f c d e l e t
+f c b d g f
+b c e f g f
+c a d e g f
+c b e f g f
+d c b a g f
+d a e f g f
+d c e f l f
+b a d f l f
+e c b f l f
+e b d f l f
+d c a f l e t
+c d e f l t
+b c d e g f
+c a d f l f
+b a d e l f
+c b a f l t
+a d e f g f
+b c a e l f
+d b a f g f
+f b d e l f
+c b a d l e t
+e c a f l t
+a b d f l f
+a b e f g f
+f c b e l e t
+b c a d g f
+c b d f l f
+f b a d g f
+a c b e l e t
+b c d f l e t
+a c b d l t
+d c a e l f
+a c d e l f
+a b d e l f
+f c a e l t
+a c b f g f
+c b d e l f
+e c d f l f
+f c b a l e t
+d b a e l f
+d b e f l e t
+d c b e l f
+a c d f g f
+c b a e l t
+e b a d l e t
+b d e f g f
+e b a f g f
+a c e f l f
+c a e f l f
+f a d e l e t
+e c b a l f
+e a d f l f
+e c b d g f
+f c a d g t
+f b a e g f
+b a e f g f

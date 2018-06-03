@@ -1,22 +1,23 @@
 graph {
-	d1 [pos="3,5!"]
-	d [pos="2,5!"]
-	b1 [pos="9,4!"]
-	c [pos="4.5,2!"]
-	a [pos="8,2!"]
-	c1 [pos="4.5,3!"]
-	x0
-	b [pos="10,4!"]
-	a1 [pos="8,3!"]
+	node [labelfontsize=50]
+	a1 [labelfontsize=50 pos="8,3!"]
+	d [labelfontsize=50 pos="2,5!"]
+	b [labelfontsize=50 pos="10,4!"]
+	c [labelfontsize=50 pos="4.5,2!"]
+	d1 [labelfontsize=50 pos="3,5!"]
+	x0 [labelfontsize=50]
+	c1 [labelfontsize=50 pos="4.5,3!"]
+	b1 [labelfontsize=50 pos="9,4!"]
+	a [labelfontsize=50 pos="8,2!"]
 	b1 -- d1
+	a1 -- b1
 	b1 -- x0
 	d -- d1
-	d1 -- x0
 	a1 -- x0
-	c1 -- x0
-	c -- c1
 	b -- b1
-	a -- a1
-	a1 -- b1
+	c -- c1
 	b1 -- c1
+	a -- a1
+	c1 -- x0
+	d1 -- x0
 }

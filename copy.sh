@@ -1,12 +1,12 @@
 #!/bin/bash
 
-networks=(6et1 tata sinet columbus geant5 bandcon bics integra rnp sanet dfn surfnet colt evolink)
-#networks=(att colt evolink)
+networks=(6et1 tata sinet columbus bandcon bics rnp sanet dfn surfnet colt evolink att integra)
 
 for n in ${networks[@]}; do
-    echo $n;
-    cp results_distance/$n/original.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/figures/${n}_orig.png 
-    cp results_distance/$n/inferred.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/figures/${n}_distance.png 
-    cp results_covariance/$n/inferred.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/figures/${n}_covariance.png 
-    cp results_trees/$n/inferred.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/figures/${n}_tree.png 
+    mkdir /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/IMC/figures/inferred_networks/${n}
+    cp results_distance/${n}/original.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/IMC/figures/inferred_networks/${n}
+    cp results_rd/${n}/inferred.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/IMC/figures/inferred_networks/${n}/inferred_rd.png
+    cp results_psm/${n}/inferred.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/IMC/figures/inferred_networks/${n}/inferred_psm.png
+    cp results_psm_dist/${n}/inferred.png /Users/asabnis/Dropbox/DarpaEdgeCT/Papers/Graph-Inference/IMC/figures/inferred_networks/${n}/inferred_psm_dist.png
+    ./script.sh ${n} 3 ;    
 done

@@ -1,6 +1,7 @@
 import random
 import math
 from collections import defaultdict
+from scipy.stats.stats import pearsonr
 
 class Tree:
     def __init__(self, id):
@@ -150,7 +151,7 @@ class ConstraintBuilder():
         self.path = dir
         self.a = {}
         self.rd = rd
-        self.ntrees = no_trees
+        self.ntrees = int(no_trees)
 
         for v in self.v:
             self.a[v] = self.v
@@ -176,6 +177,8 @@ class ConstraintBuilder():
         self.bidirectionaledges()
 
         self.rdConstraints()
+
+        #self.rdConstraintsWithError()
         #self.distance()
 
         ## there should be no cycles in the graph
@@ -881,7 +884,7 @@ class ConstraintBuilder():
     def covarianceTreeConstraints(self):
         trees = self.readTrees()
         self.condense_trees(trees)
-        self.nTreesToBinary(trees)
+        #self.nTreesToBinary(trees)
 
         count_constraints = 0
 
@@ -1018,20 +1021,19 @@ class ConstraintBuilder():
 #                     co = Constraint(-50, -1, [[p2_var], [p1_var], [e_var]], [1, -1, -50])
 #                     self.constraints[co.id] = co
 #                     self.obj.vars.append([e_var])
-#                     self.obj.coeffs.append(15)
+ #                     self.obj.coeffs.append(15)
 
                     count_constraints += 1
 
-                    if count_constraints % 5 < int(self.ntrees):
-                        continue
+                    c.is_nary = False
                                                
                     if c.is_nary == False:
                         co = Constraint(-50, -1, [[p2_var], [p1_var], [e_var]], [1, -1, -50])
                         self.constraints[co.id] = co
                         self.obj.vars.append([e_var])
-                        self.obj.coeffs.append(5)
+                        self.obj.coeffs.append(2)
                     else :
-                        #co = Constraint(-49, 0, [[p2_var], [p1_var], [e_var]], [1, -1, -50])
+                        co = Constraint(-49, 0, [[p2_var], [p1_var], [e_var]], [1, -1, -50])
                         err_var = self.vh.getVariable('f', 'f_' + str(count4), 0, 5)
                         co = Constraint(0, "Na", [[err_var], [p2_var], [p1_var]], [1, -1, 1])
                         self.constraints[co.id] = co
@@ -1040,7 +1042,7 @@ class ConstraintBuilder():
                         self.constraints[co.id] = co
 
                         self.obj.vars.append([err_var])
-                        self.obj.coeffs.append(3)
+                        self.obj.coeffs.append(2)
 
                         count4 += 1
                     
@@ -1155,12 +1157,27 @@ class ConstraintBuilder():
             ## if else condition here
             if line[4] == "g":
                 co = Constraint(-50, -1, [[p2_var], [p1_var], [e_var]], [1, -1, -50])
-            else :
+                self.constraints[co.id] = co
+                self.obj.vars.append([e_var])
+                self.obj.coeffs.append(4)                    
+            elif line[4] == "l":
                 co = Constraint(-50, -1, [[p1_var], [p2_var], [e_var]], [1, -1, -50])
+                self.constraints[co.id] = co
+                self.obj.vars.append([e_var])
+                self.obj.coeffs.append(4)                                
+            else:
+                co = Constraint("Na", 0, [[p2_var], [p1_var], [e_var]], [1, -1, -1])
+                self.constraints[co.id] = co
+                self.obj.vars.append([e_var])
+                self.obj.coeffs.append(4)                    
 
-            self.constraints[co.id] = co
-            self.obj.vars.append([e_var])
-            self.obj.coeffs.append(4)                    
+
+                co = Constraint("Na", 0, [[p1_var], [p2_var], [e_var]], [1, -1, -1])
+                self.constraints[co.id] = co
+                self.obj.vars.append([e_var])
+                self.obj.coeffs.append(4)                    
+
+
                         
 
 
@@ -1306,9 +1323,89 @@ class ConstraintBuilder():
                     self.constraints[cons.id] = cons
 
 
-            #print(distances)
+    def rdConstraintsWithError(self):
+
+        counter = 1000
+        path = "/".join(self.path.split("/")[:-1])
+        
+        f = open(path + "/rd" + str(self.ntrees - 1) + ".txt", "r")
+
+        f1 = open(path + "/rd" + str(self.ntrees) + ".txt", "w")
+
+        newrds = []
+        newbools = []
+
+        print("n trees ", self.ntrees)
+
+        for l in f:
+            l = l.strip().split(";")
+            rds = l[1].split(" ")
+            bools = l[2].split(" ")
+            src = l[0]
+
+            nrds = []
+            nbs  = []
+
+            for i in range(len(rds) - 1):
+                bool = bools[i]
+                if bool == "f":
+                    nrds.append(rds[i])
+                    nbs.append("f")
+                else :
+                    if random.randint(1,10 - self.ntrees) <= 1:
+                        nrds.append(rds[i+1])
+                        ## Introduced an error
+                        nbs.append("f")
+
+                        ## swap the constraint
+                        swap_var = rds[i+1]
+                        rds[i+1] = rds[i]
+                        rds[i] = swap_var
+                    else :
+                        nrds.append(rds[i])
+                        nbs.append("t")
+
+            nrds.append(rds[-1])
             
-            
+            str1 = " ".join(nrds)
+            f1.write(src + ";" + str1 + ";" + " ".join(nbs) + "\n")
+
+            e_var = self.vh.getVariable('e' , 'e_' + str(counter), 0, 1)
+            counter+=1 
+
+            for i in range(len(rds) - 1):
+                s1 = nrds[i]
+                s2 = nrds[i+1]
+
+                d1 = self.d[((src, s1))][0]
+                d2 = self.d[((src, s2))][0]
+                
+                z1_var = self.vh.getVariable('z', 'z_' + s1 + '_' + src, 2, 12)
+                z2_var = self.vh.getVariable('z', 'z_' + s2 + '_' + src, 2, 12)
+
+                if d2 == d1:
+
+                    co = Constraint("Na", 0, [[z2_var], [z1_var], [e_var]], [1, -1, -1])
+                    self.constraints[co.id] = co
+                    self.obj.vars.append([e_var])
+                    self.obj.coeffs.append(4)                    
+
+
+                    co = Constraint("Na", 0, [[z1_var], [z2_var], [e_var]], [1, -1, -1])
+                    self.constraints[co.id] = co
+                    self.obj.vars.append([e_var])
+                    self.obj.coeffs.append(4)                    
+
+                else:
+                    co = Constraint(-2, -1, [[z1_var], [z2_var], [e_var]], [1, -1, -2])
+                    self.constraints[co.id] = co
+                    self.obj.vars.append([e_var])
+                    self.obj.coeffs.append(4)                                
+
+
+
+        f1.close()
+
 
     # this is fine
     def cycleConstraints(self):

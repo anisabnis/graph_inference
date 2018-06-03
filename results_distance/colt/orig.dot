@@ -1,29 +1,30 @@
 graph {
-	f [pos="3,9!"]
-	a [pos="8,2!"]
-	c [pos="4.5,2!"]
-	85
-	d [pos="2,5!"]
-	e [pos="7,9!"]
-	f1 [pos="3,8!"]
-	e1 [pos="7,7!"]
-	d1 [pos="3,5!"]
-	a1 [pos="8,3!"]
-	b1 [pos="9,4!"]
-	b [pos="10,4!"]
-	c1 [pos="4.5,3!"]
-	b -- b1
-	a1 -- d1
-	b1 -- c1
-	f -- f1
-	a1 -- e1
-	c -- c1
-	e -- e1
+	node [labelfontsize=50]
+	85 [labelfontsize=50]
+	a [labelfontsize=50 pos="8,2!"]
+	d [labelfontsize=50 pos="2,5!"]
+	e1 [labelfontsize=50 pos="7,7!"]
+	f1 [labelfontsize=50 pos="3,8!"]
+	b [labelfontsize=50 pos="10,4!"]
+	d1 [labelfontsize=50 pos="3,5!"]
+	c [labelfontsize=50 pos="4.5,2!"]
+	e [labelfontsize=50 pos="7,9!"]
+	f [labelfontsize=50 pos="3,9!"]
+	a1 [labelfontsize=50 pos="8,3!"]
+	b1 [labelfontsize=50 pos="9,4!"]
+	c1 [labelfontsize=50 pos="4.5,3!"]
 	85 -- d1
-	85 -- f1
-	85 -- b1
-	c1 -- e1
-	c1 -- f1
+	c -- c1
 	d -- d1
+	a1 -- d1
+	c1 -- e1
 	a -- a1
+	e -- e1
+	c1 -- f1
+	f -- f1
+	85 -- f1
+	b -- b1
+	85 -- b1
+	b1 -- c1
+	a1 -- e1
 }

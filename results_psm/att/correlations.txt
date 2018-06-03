@@ -1,0 +1,20 @@
+c d b a l e t
+e c d b g t
+d c b e l t
+e d b a g t
+b c d e l f
+c d a e l e t
+b c a e l e t
+d c b a l e t
+b c d a g t
+e c b a g t
+a c d e g t
+d b a e l e t
+e c d a g t
+a d b e l t
+a c d b g t
+c d b e l t
+c b a e l e t
+d c a e l e t
+a c b e l t
+b d a e l e t

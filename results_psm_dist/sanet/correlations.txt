@@ -1,0 +1,16 @@
+c d a e l
+c b a e l
+d c b e g
+d c b a g
+d c a e l
+d b a e l
+b d a e l
+b c d e l
+b c a e l
+b c d a l
+a d b e g
+a c b e g
+a c d e g
+e d b a g
+e c b a g
+e c d a g
