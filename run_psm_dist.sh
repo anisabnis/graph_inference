@@ -7,7 +7,7 @@
 #networks=(evolink bics 6et1)
 #intnodes=(1 1 3)
 
-networks=(integra)
+networks=(6et1)
 intnodes=(3)
 
 for i in {0..0}; do

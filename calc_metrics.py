@@ -63,7 +63,7 @@ def make_compact(paths, nodes):
 
 def get_orig_edges(dir, compact):
     orig_paths = {}
-    f = open(dir + "/" + "tata_paths.txt", "r")
+    f = open(dir + "/" + "orig_path.txt", "r")
 
     enclaves = set()
     egress = set()

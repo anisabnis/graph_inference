@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 params = {
     "pgf.texsystem": "pdflatex",
     "text.usetex": True,
+    "text.latex.unicode": False,
     "font.family": "serif",
     "font.serif": [],
     "font.sans-serif": [],
@@ -23,15 +24,15 @@ params = {
     "xtick.labelsize": 14,
     "ytick.labelsize": 14,
     "text.latex.preamble": [
-        "\\usepackage{gensymb}",
-        "\\usepackage{fix-cm}",
+#        "\\usepackage{gensymb}",
+#        "\\usepackage{fix-cm}",
     ]
 }
 sns.set_palette('colorblind')
 sns.set_style("whitegrid", params)
 matplotlib.rcParams.update(params)
 
-font = {'size'   : 30}
+font = {'size'   : 22}
 
 matplotlib.rc('font', **font)
 
@@ -76,17 +77,18 @@ ax1 = ax.twinx()
 rects1 = ax.bar(ind, accuracy, width, color='g')
 rects2 = ax1.bar(ind+width, ped, width, color='b')
 
-ax.set_ylabel('Network Similarity', fontsize=18)
-ax1.set_ylabel('Path Edit Distance', fontsize=18)
+ax.set_ylabel('Network Similarity', fontsize=14)
+ax1.set_ylabel('PED', fontsize=14)
 
 ax.set_ylim([0,100])
 ax1.set_ylim([0,2])
 plt.gcf().subplots_adjust(bottom=0.35)
-plt.gcf().subplots_adjust(right=0.80)
+plt.gcf().subplots_adjust(right=0.75)
 
 ax.set_xticks(ind+width)
-ax.set_xticklabels(networks, rotation=90, fontsize=18)
-ax.legend( (rects1[0], rects2[1]), ('N.S', 'P.E.D' ), prop={'size':16},  borderaxespad=0. ,fontsize=30)
+ax.set_xticklabels(networks, rotation=90, fontsize=14)
+#ax.legend( (rects1[0], rects2[1]), ('NS', 'PED' ), prop={'size':12},  borderaxespad=0. ,fontsize=12,  loc=9, bbox_to_anchor=(0.75, -0.1), ncol=2)
+ax.legend( (rects1[0], rects2[1]), ('NS', 'PED' ), prop={'size':11},  borderaxespad=0. ,fontsize=12,  loc=2, ncol=2)
 plt.grid()
 
 plt.savefig('experiment' + str(dir) + '.pdf')

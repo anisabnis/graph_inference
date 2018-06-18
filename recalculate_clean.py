@@ -1,7 +1,6 @@
 import random
 import math
 from collections import defaultdict
-from scipy.stats.stats import pearsonr
 
 class Tree:
     def __init__(self, id):
@@ -176,7 +175,7 @@ class ConstraintBuilder():
 
         self.bidirectionaledges()
 
-        self.rdConstraints()
+        #self.rdConstraints()
 
         #self.rdConstraintsWithError()
         #self.distance()
@@ -191,10 +190,10 @@ class ConstraintBuilder():
 
         self.buildPathConstraints()
 
-        #self.treeConstraints()
+        self.treeConstraints()
 
         ## Covariance trees
-        self.covarianceTreeConstraints2()
+        #self.covarianceTreeConstraints2()
 
         #self.pathCorrectness()
         self.destinationTreeConstraints()
@@ -313,7 +312,6 @@ class ConstraintBuilder():
 
                 self.obj.vars.append([x_var])
                 self.obj.coeffs.append(5)
-                
 
                 self.obj.vars.append([w1_var])
                 self.obj.coeffs.append(5)
@@ -637,7 +635,7 @@ class ConstraintBuilder():
 
         cc = 0
 
-        sources = self.ntrees.split(":")
+        sources = ['a', 'b', 'c', 'd', 'e']
 
         for src in sources:
             #if src == "e" or src == "d" or src == "c":
@@ -665,7 +663,7 @@ class ConstraintBuilder():
                     expended += 1
                     e_no = 20 * (ord(src) - 97) + expended
 
-                    print(e_no, end=' ')
+#                    print(e_no, end=' ')
 
                     for j in self.v:
                         if j == src:
@@ -748,8 +746,8 @@ class ConstraintBuilder():
 
 
                             #integra
-                            if s_no == 23 or s_no == 65 or s_no == 84 or s_no == 43 or s_no == 66 or s_no == 82 or s_no == 83 or s_no == 63:
-                                continue
+                            #if s_no == 23 or s_no == 65 or s_no == 84 or s_no == 43 or s_no == 66 or s_no == 82 or s_no == 83 or s_no == 63:
+                            #    continue
 
                             #bics
                             #if s_no == 83 or s_no == 84 or s_no == 86 or s_no == 45 or s_no == 26 or s_no == 7 or s_no == 3 or s_no == 65 or s_no == 64 or s_no == 107 or s_no == 108 or s_no == 105:

@@ -23,8 +23,8 @@ params = {
     "xtick.labelsize": 14,
     "ytick.labelsize": 14,
     "text.latex.preamble": [
-        "\\usepackage{gensymb}",
-        "\\usepackage{fix-cm}",
+#        "\\usepackage{gensymb}",
+#        "\\usepackage{fix-cm}",
     ]
 }
 sns.set_palette('colorblind')
@@ -72,7 +72,7 @@ width = 0.15
 fig = plt.figure()
 
 ax = fig.add_subplot(111)
-ax.set_ylabel('Network Similarity')
+ax.set_ylabel('Network Similarity', fontsize=16)
 
 p1 = ax.bar(ind, first, width, color='g')
 p2 = ax.bar(ind +width, second, width,color='b')
@@ -82,7 +82,7 @@ p5 = ax.bar(ind +4*width, fifth, width,color='c')
 p6 = ax.bar(ind +5*width, sixth, width,color='y')
 
 
-ax.set_xticklabels(networks)
+ax.set_xticklabels(networks, fontsize=14)
 
 ax.set_ylim([0,100])
 plt.gcf().subplots_adjust(bottom=0.35)
@@ -91,6 +91,6 @@ plt.gcf().subplots_adjust(right=0.80)
 ax.set_xticks(ind + 2*width)
 ax.grid()
 #plt.grid()
-ax.legend((p1[0], p2[0], p3[0], p4[0], p5[0], p6[0]),  ('0 \% error', '10 \% error', '20 \% error', '30 \% error', '40 \% error', '50 \% error') , prop={'size':11}, bbox_to_anchor=(1., 1.), loc=2, borderaxespad=0. ,fontsize=30)
+ax.legend((p1[0], p2[0], p3[0], p4[0], p5[0], p6[0]),  ('0 \% error', '10 \% error', '20 \% error', '30 \% error', '40 \% error', '50 \% error') , prop={'size':14}, bbox_to_anchor=(0.5, -0.1), loc=9, borderaxespad=0. ,fontsize=30, ncol=3)
 plt.savefig('experiment' + str('II') + '.pdf')
 
